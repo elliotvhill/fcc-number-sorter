@@ -33,13 +33,26 @@ const selectionSort = (array) => {
     return array
 };
 
+// third: insertion sort algorithm
+const insertionSort = (array) => {
+    for (let i = 1; i < array.length; i++) {
+        const currValue = array[i]
+        let j = i - 1
+    }
+    while (j >= 0 && array[j] > currValue) {
+        array[j+1] = array[j]
+        j--
+    }
+};
+
 
 // FUNCTIONS//
 const sortInputArray = (e) => {
     e.preventDefault();
     const inputValues = [...document.getElementsByClassName("values-dropdown")].map((dropdown) => Number(dropdown.value))
     // const sortedValues = bubbleSort(inputValues)
-    const sortedValues = selectionSort(inputValues)
+    // const sortedValues = selectionSort(inputValues)
+    const sortedValues = insertionSort(inputValues)
     updateUI(sortedValues)
 };
 
